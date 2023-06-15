@@ -1,4 +1,4 @@
-﻿using eMovieTickets.Data;
+﻿using eMovieTickets.Data.Enums;
 using System.ComponentModel.DataAnnotations;
 
 namespace eMovieTickets.Models
