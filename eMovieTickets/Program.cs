@@ -1,9 +1,11 @@
 using eMovieTickets.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // DbContext configuration
-builder.Services.AddDbContext<AppDbContext>();
+string connection = builder.Configuration.GetConnectionString("DefaultConnectionString");
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
