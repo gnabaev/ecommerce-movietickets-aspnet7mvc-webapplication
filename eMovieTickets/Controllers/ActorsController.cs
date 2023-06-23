@@ -47,7 +47,7 @@ namespace eMovieTickets.Controllers
 
             if (actorDetails == null)
             {
-                return View("Not Found");
+                return View("NotFound");
             }
 
             return View(actorDetails);
@@ -60,7 +60,7 @@ namespace eMovieTickets.Controllers
 
             if (actorDetails == null)
             {
-                return View("Not Found");
+                return View("NotFound");
             }
 
             return View(actorDetails);
@@ -86,7 +86,7 @@ namespace eMovieTickets.Controllers
 
             if (actorDetails == null)
             {
-                return View("Not Found");
+                return View("NotFound");
             }
 
             return View(actorDetails);
