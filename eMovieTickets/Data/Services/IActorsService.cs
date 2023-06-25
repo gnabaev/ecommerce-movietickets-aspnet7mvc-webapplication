@@ -1,17 +1,10 @@
-﻿using eMovieTickets.Models;
+﻿using eMovieTickets.Data.Base;
+using eMovieTickets.Models;
 
 namespace eMovieTickets.Data.Services
 {
-    public interface IActorsService
+    public interface IActorsService : IEntityBaseRepository<Actor>
     {
-        Task<IEnumerable<Actor>> GetAllAsync();
-
-        Task<Actor> GetByIdAsync(int id);
-
-        Task AddAsync(Actor actor);
-
-        Task<Actor> UpdateAsync(int id, Actor newActor);
-
-        Task DeleteAsync(int id);
+        
     }
 }
