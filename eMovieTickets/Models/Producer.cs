@@ -9,13 +9,17 @@ namespace eMovieTickets.Models
         public int Id { get; set; }
 
 		[Display(Name = "Profile Picture")]
+		[Required(ErrorMessage = "Profile Picture is required")]
 		public string? ProfilePictureURL { get; set; }
 
 		[Display(Name = "Full Name")]
-		public string? FullName { get; set; }
+        [Required(ErrorMessage = "Full Name is required")]
+        [MinLength(3), MaxLength(255)]
+        public string? FullName { get; set; }
 
 		[Display(Name = "Biography")]
-		public string? Bio { get; set; }
+        [Required(ErrorMessage = "Biograthy is required")]
+        public string? Bio { get; set; }
 
 		//Relationships
 		public List<Movie>? Movies { get; set; }

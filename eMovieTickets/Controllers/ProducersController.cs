@@ -1,5 +1,6 @@
 ﻿using eMovieTickets.Data;
 using eMovieTickets.Data.Services;
+using eMovieTickets.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,6 +31,25 @@ namespace eMovieTickets.Controllers
             }
 
             return View(producerDetails);
+        }
+
+		//Get: Producers/Create
+		public IActionResult Create()
+		{
+			return View();
+		}
+
+        [HttpPost]
+        public async Task<IActionResult> Create([Bind("ProfilePictureURL,FullName,Bio")] Producer producer)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(producer);
+            }
+
+            await _service.AddAsync(producer);
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }
