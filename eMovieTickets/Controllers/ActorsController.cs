@@ -67,7 +67,7 @@ namespace eMovieTickets.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FullName,ProfilePictureURL,Bio")] Actor actor)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,ProfilePictureURL,FullName,Bio")] Actor actor)
         {
             if (!ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace eMovieTickets.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //Get: Actors/Delete
+        //Get: Actors/Delete/1
         public async Task<IActionResult> Delete(int id)
         {
             var actorDetails = await _service.GetByIdAsync(id);
@@ -101,6 +101,5 @@ namespace eMovieTickets.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-
     }
 }
