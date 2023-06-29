@@ -1,11 +1,12 @@
-﻿using eMovieTickets.Data.Enums;
+﻿using eMovieTickets.Data.Base;
+using eMovieTickets.Data.Enums;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eMovieTickets.Models
 {
-    public class Movie
+    public class Movie : IEntityBase
     {
         [Key]
         public int Id { get; set; }
