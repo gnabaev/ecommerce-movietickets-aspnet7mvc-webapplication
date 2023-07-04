@@ -1,4 +1,5 @@
 ﻿using eMovieTickets.Data;
+using eMovieTickets.Data.ViewModels;
 using eMovieTickets.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -18,9 +19,11 @@ namespace eMovieTickets.Controllers
 			_context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Login()
 		{
-			return View();
+			var response = new LoginVM();
+
+			return View(response);
 		}
 	}
 }
