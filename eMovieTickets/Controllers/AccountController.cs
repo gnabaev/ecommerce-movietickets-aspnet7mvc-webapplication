@@ -116,5 +116,10 @@ namespace eMovieTickets.Controllers
 
 			return RedirectToAction("Index", "Movies");
 		}
+
+		public IActionResult AccessDenied(string returnURL)
+		{
+			return View();
+		}
 	}
 }

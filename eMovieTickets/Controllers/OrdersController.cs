@@ -1,5 +1,6 @@
 ﻿using eMovieTickets.Data.Cart;
 using eMovieTickets.Data.Services;
+using eMovieTickets.Data.Static;
 using eMovieTickets.Data.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

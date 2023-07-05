@@ -1,5 +1,6 @@
 ﻿using eMovieTickets.Data;
 using eMovieTickets.Data.Services;
+using eMovieTickets.Data.Static;
 using eMovieTickets.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace eMovieTickets.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = UserRoles.Admin)]
     public class ProducersController : Controller
     {
         private readonly IProducersService _service;
